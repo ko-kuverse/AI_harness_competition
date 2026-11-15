@@ -1,0 +1,65 @@
+name: build-image
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Image tag to build and save"
+        required: false
+        default: "cpu-c-harness:0.1.0"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build linux/amd64 image
+        run: |
+          docker build --platform linux/amd64 -t "${{ inputs.tag }}" .
+          docker image inspect "${{ inputs.tag }}" \
+            --format 'os={{.Os}} arch={{.Architecture}} size={{.Size}}'
+
+      - name: Image doctor
+        run: docker run --rm "${{ inputs.tag }}" doctor
+
+      - name: Harness tests inside image
+        run: |
+          docker run --rm --entrypoint python "${{ inputs.tag }}" \
+            -m unittest discover -s harness/tests -v
+
+      - name: Save uncompressed docker archive
+        run: |
+          docker save -o cpu-c-harness-linux-amd64.tar "${{ inputs.tag }}"
+          sha256sum cpu-c-harness-linux-amd64.tar > cpu-c-harness-linux-amd64.tar.sha256
+          ls -lh cpu-c-harness-linux-amd64.tar
+          head -1 cpu-c-harness-linux-amd64.tar.sha256
+
+      - name: Verify archive architecture and image tag
+        run: |
+          python3 - <<'PY'
+          import json
+          import tarfile
+
+          with tarfile.open("cpu-c-harness-linux-amd64.tar") as archive:
+              manifest = json.load(archive.extractfile("manifest.json"))
+              assert len(manifest) == 1, manifest
+              config_path = manifest[0]["Config"]
+              config = json.load(archive.extractfile(config_path))
+              print("image:", manifest[0]["RepoTags"])
+              print("os/arch:", config["os"], config["architecture"])
+              assert config["os"] == "linux"
+              assert config["architecture"] == "amd64"
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cpu-c-harness-linux-amd64-tar
+          path: |
+            cpu-c-harness-linux-amd64.tar
+            cpu-c-harness-linux-amd64.tar.sha256
+          if-no-files-found: error
+          retention-days: 7
