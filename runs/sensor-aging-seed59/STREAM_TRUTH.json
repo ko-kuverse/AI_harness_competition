@@ -1,0 +1,143 @@
+{
+  "scenario": "sensor-aging",
+  "seed": 59,
+  "hidden_fraction": 0.15,
+  "batches": [
+    {
+      "name": "batch-000-clean",
+      "rows": {
+        "train": 12688,
+        "validation": 3202,
+        "hidden_test": 2107
+      },
+      "engines": {
+        "train": 53,
+        "validation": 14,
+        "hidden_test": 10
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-001-clean",
+      "rows": {
+        "train": 12494,
+        "validation": 2673,
+        "hidden_test": 1937
+      },
+      "engines": {
+        "train": 53,
+        "validation": 14,
+        "hidden_test": 10
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-002-aging0p5",
+      "rows": {
+        "train": 12378,
+        "validation": 3308,
+        "hidden_test": 2031
+      },
+      "engines": {
+        "train": 53,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 0.5,
+      "drifted_features": [
+        "sensors[1]",
+        "sensors[2]",
+        "sensors[3]"
+      ]
+    },
+    {
+      "name": "batch-003-aging1p0",
+      "rows": {
+        "train": 11802,
+        "validation": 2934,
+        "hidden_test": 1940
+      },
+      "engines": {
+        "train": 53,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 1.0,
+      "drifted_features": [
+        "sensors[1]",
+        "sensors[2]",
+        "sensors[3]"
+      ]
+    },
+    {
+      "name": "batch-004-aging1p5",
+      "rows": {
+        "train": 11557,
+        "validation": 2580,
+        "hidden_test": 1606
+      },
+      "engines": {
+        "train": 53,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 1.5,
+      "drifted_features": [
+        "sensors[1]",
+        "sensors[2]",
+        "sensors[3]"
+      ]
+    },
+    {
+      "name": "batch-005-aging2p0",
+      "rows": {
+        "train": 12623,
+        "validation": 2490,
+        "hidden_test": 2148
+      },
+      "engines": {
+        "train": 53,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 2.0,
+      "drifted_features": [
+        "sensors[1]",
+        "sensors[2]",
+        "sensors[3]"
+      ]
+    },
+    {
+      "name": "batch-006-replaced",
+      "rows": {
+        "train": 11426,
+        "validation": 2930,
+        "hidden_test": 2177
+      },
+      "engines": {
+        "train": 52,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-007-replaced",
+      "rows": {
+        "train": 12330,
+        "validation": 2932,
+        "hidden_test": 1845
+      },
+      "engines": {
+        "train": 52,
+        "validation": 13,
+        "hidden_test": 9
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b002-t3-scope-recent",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 5937,
+  "train_matrix_sha256": "sha256:b5928ce8c188626c7822a0cacbb488c1d1c2ce474e806c9132a1bee7f0c8395f",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:3b5a117826766349dd1e6299948631b64d4bbade47cd01ca25da605c52ce5caf",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 6846,
+  "final_epochs": 24,
+  "epochs_run": 14,
+  "best_epoch": 9,
+  "training_seconds": 0.09267279200139455,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "select_before": {
+    "n": 1858,
+    "rmse": 73.5812487175011,
+    "mae": 54.69698158139055,
+    "bias": -6.198916753563799,
+    "over_rate": 0.5877287405812702,
+    "nasa_exponent_mean": 4.76705317735112,
+    "nasa_score": 7014359608.681602
+  },
+  "select_after": {
+    "n": 1858,
+    "rmse": 74.29438641387785,
+    "mae": 53.103658891401366,
+    "bias": -15.881779736325367,
+    "over_rate": 0.5231431646932185,
+    "nasa_exponent_mean": 4.514380058820212,
+    "nasa_score": 5867094794.629309
+  },
+  "retention_before": {
+    "n": 3210,
+    "rmse": 42.83453261937968,
+    "mae": 34.585928881674825,
+    "bias": 12.236425860713702,
+    "over_rate": 0.6632398753894081,
+    "nasa_exponent_mean": 3.200714007156393,
+    "nasa_score": 1577040.5672952253
+  },
+  "retention_after": {
+    "n": 3210,
+    "rmse": 43.31350922407414,
+    "mae": 34.905838497989436,
+    "bias": 11.03097677926484,
+    "over_rate": 0.6358255451713396,
+    "nasa_exponent_mean": 3.2151046761213524,
+    "nasa_score": 1754136.3296567695
+  },
+  "spec": {
+    "trial_id": "t3-scope-recent",
+    "arm": "scope-recent",
+    "hypothesis": "新批次的分布已整体切换，历史样本帮助有限；去掉回放、只用本批数据应不差于基准试验。",
+    "changed_factor": "data_scope",
+    "data_scope": "recent",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:23+00:00"
+}

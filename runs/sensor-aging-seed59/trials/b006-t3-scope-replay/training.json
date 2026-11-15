@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b006-t3-scope-replay",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 13326,
+  "train_matrix_sha256": "sha256:3de623b6459c8e5a8293b77ed21000dadba94d44105e31a31ab1df6e8861ee46",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:8b2f91334118639d47b8cd44f07cc4a123f0ceff4fbdeb51978a777b4cc4da31",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 7425,
+  "final_epochs": 30,
+  "epochs_run": 20,
+  "best_epoch": 15,
+  "training_seconds": 0.2960090829874389,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "select_before": {
+    "n": 2542,
+    "rmse": 50.56811228342996,
+    "mae": 38.54223310557188,
+    "bias": -8.029489690449717,
+    "over_rate": 0.49213217938631,
+    "nasa_exponent_mean": 3.3168572782954,
+    "nasa_score": 14083992.141720396
+  },
+  "select_after": {
+    "n": 2542,
+    "rmse": 52.26892677726811,
+    "mae": 38.361345250263234,
+    "bias": -18.8997158439796,
+    "over_rate": 0.3988985051140834,
+    "nasa_exponent_mean": 3.175429973938906,
+    "nasa_score": 22761508.002598666
+  },
+  "retention_before": {
+    "n": 17187,
+    "rmse": 113.94984162843208,
+    "mae": 87.47837395008652,
+    "bias": -73.7619557825822,
+    "over_rate": 0.19572933030779077,
+    "nasa_exponent_mean": 6.887372051939396,
+    "nasa_score": 593004902489078.2
+  },
+  "retention_after": {
+    "n": 17187,
+    "rmse": 55.005154970125716,
+    "mae": 40.63695630590286,
+    "bias": 0.38152589205367105,
+    "over_rate": 0.5894571478443009,
+    "nasa_exponent_mean": 3.5992098950458717,
+    "nasa_score": 7023880894.67765
+  },
+  "spec": {
+    "trial_id": "t3-scope-replay",
+    "arm": "scope-replay",
+    "hypothesis": "旧工况仍会出现，混入历史回放应在不损失本批精度的前提下保住旧批次。",
+    "changed_factor": "data_scope",
+    "data_scope": "replay",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:52:05+00:00"
+}

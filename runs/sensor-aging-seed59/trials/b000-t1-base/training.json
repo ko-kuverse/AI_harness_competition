@@ -1,0 +1,70 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b000-t1-base",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 10125,
+  "train_matrix_sha256": "sha256:d5b5b7867ac94644b85cb1dd46673599658d17b6ee3c29c57836f082e78bf102",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:06da7e58bc90d6083017cb5ea6301ea2ce9cb18db4d2a622c077e482381ea76b",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 6750,
+  "final_epochs": 18,
+  "epochs_run": 8,
+  "best_epoch": 3,
+  "training_seconds": 0.07447325001703575,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "select_before": {
+    "n": 2563,
+    "rmse": 63.683279011328,
+    "mae": 46.89220014476042,
+    "bias": -0.3372210030918576,
+    "over_rate": 0.6039797112758486,
+    "nasa_exponent_mean": 4.144265155077747,
+    "nasa_score": 6920735338.819402
+  },
+  "select_after": {
+    "n": 2563,
+    "rmse": 62.15668877726732,
+    "mae": 46.279923557046715,
+    "bias": 3.1903317004426777,
+    "over_rate": 0.6234880998829496,
+    "nasa_exponent_mean": 4.130804757359241,
+    "nasa_score": 7771290704.78269
+  },
+  "retention_before": {
+    "n": 0
+  },
+  "retention_after": {
+    "n": 0
+  },
+  "spec": {
+    "trial_id": "t1-base",
+    "arm": "base",
+    "hypothesis": "未见漂移。按当前策略（只用本批数据，学习率 0.001，至多 20 轮）从在线模型续训，选型集主指标应低于不更新的对照。依据：尚无历史试验，采用初始策略。",
+    "changed_factor": null,
+    "data_scope": "recent",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:54+00:00"
+}

@@ -1,0 +1,80 @@
+{
+  "baseline_dir": "cpu-c-guide-20261110-v1",
+  "checkpoint": null,
+  "stream_dir": "/sessions/rcw-012qrsqddkkbugppvt99lvdo/work/sim-sensor-aging-s59/stream",
+  "workdir": "/sessions/rcw-012qrsqddkkbugppvt99lvdo/work/demo-sensor-aging-s59-a",
+  "seed": 42,
+  "group_pattern": "^(.*)_c\\d+$",
+  "block_rows": 64,
+  "drift": {
+    "psi_bins": 10,
+    "psi_warn": 0.1,
+    "psi_alert": 0.25,
+    "noise_floor_mult": 2.0,
+    "noise_floor_reps": 4,
+    "min_alert_features": 2,
+    "severe_share": 0.5,
+    "perf_tol": 0.05,
+    "perf_severe": 0.25,
+    "target_psi_alert": 0.25,
+    "reference_rows": 20000
+  },
+  "experiment": {
+    "min_rounds": 3,
+    "max_trials": 3,
+    "max_trials_severe": 4,
+    "round_seconds": 300.0,
+    "select_fraction": 0.2,
+    "max_train_rows": 60000,
+    "max_epochs": 40,
+    "patience": 5,
+    "lr_min": 0.0001,
+    "lr_max": 0.01,
+    "lr_step": 2.5,
+    "batch_sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "policy_min_gain": 0.005,
+    "selection_slack": 0.02,
+    "initial_policy": {
+      "data_scope": "replay",
+      "replay_ratio": 0.5,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 20
+    }
+  },
+  "gate": {
+    "min_rel_gain": 0.03,
+    "min_gate_groups": 10,
+    "confidence": 0.95,
+    "bootstrap": 1000,
+    "static_tol": 0.0,
+    "retention_tol": 0.1,
+    "retention_rows": 20000,
+    "safety_tol": 0.02,
+    "rollback_margin": 0.02,
+    "static_floor_tol": 0.0,
+    "rollback_lookback": 3
+  },
+  "record": {
+    "project": "zhixun-harness",
+    "workspace": null,
+    "mode": "offline",
+    "public": true
+  },
+  "llm": {
+    "enabled": false,
+    "base_url": "",
+    "api_key_env": "PYTRIO_API_KEY",
+    "model": "Qwen3.8-27B",
+    "timeout": 60.0,
+    "max_tokens": 1200,
+    "temperature": 0.2,
+    "max_calls": 64,
+    "extra_body": {}
+  }
+}

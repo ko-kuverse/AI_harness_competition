@@ -1,0 +1,475 @@
+{
+  "next_index": 8,
+  "production": "v0",
+  "lineage": [
+    "v1",
+    "v0"
+  ],
+  "policy": {
+    "data_scope": "replay",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "lr_direction": -1
+  },
+  "rounds_done": 7,
+  "trials_total": 20,
+  "digest": [
+    {
+      "batch": "batch-000-clean",
+      "drift": "none",
+      "severity": "none",
+      "action": "hold",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 62.15668877726732,
+          "rel_gain_vs_control": 0.023971602244116968,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "lr-down",
+          "data_scope": "recent",
+          "learning_rate": 0.0004,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 61.893418505619906,
+          "rel_gain_vs_control": 0.02810565871442817,
+          "verdict": "inconclusive"
+        }
+      ]
+    },
+    {
+      "batch": "batch-001-clean",
+      "drift": "none",
+      "severity": "none",
+      "action": "hold",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 58.43939686859058,
+          "rel_gain_vs_control": -0.014408326462983482,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "scope-recent",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 60.34506994076334,
+          "rel_gain_vs_control": -0.04748756299711927,
+          "verdict": "inconclusive"
+        }
+      ]
+    },
+    {
+      "batch": "batch-002-aging0p5",
+      "drift": "covariate_harmful",
+      "severity": "severe",
+      "action": "promote",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 74.28743027956138,
+          "rel_gain_vs_control": 0.5535642839930192,
+          "verdict": "supported"
+        },
+        {
+          "arm": "lr-up",
+          "data_scope": "replay",
+          "learning_rate": 0.0025,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 73.40612520388694,
+          "rel_gain_vs_control": 0.558860550952297,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "scope-recent",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 73.7002686454984,
+          "rel_gain_vs_control": 0.557092874543645,
+          "verdict": "supported"
+        },
+        {
+          "arm": "scope-cumulative",
+          "data_scope": "cumulative",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 73.88972848378364,
+          "rel_gain_vs_control": 0.5559543018639717,
+          "verdict": "inconclusive"
+        }
+      ]
+    },
+    {
+      "batch": "batch-003-aging1p0",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "action": "hold",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 34.51386206781543,
+          "rel_gain_vs_control": 0.1797861750174723,
+          "verdict": "supported"
+        },
+        {
+          "arm": "scope-replay",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 34.2778156656185,
+          "rel_gain_vs_control": 0.18539576232007246,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "lr-down",
+          "data_scope": "recent",
+          "learning_rate": 0.0004,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 34.936156340155904,
+          "rel_gain_vs_control": 0.1697504508292022,
+          "verdict": "refuted"
+        }
+      ]
+    },
+    {
+      "batch": "batch-004-aging1p5",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "action": "hold",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 55.77702899827574,
+          "rel_gain_vs_control": 0.043731231523453006,
+          "verdict": "supported"
+        },
+        {
+          "arm": "lr-up",
+          "data_scope": "recent",
+          "learning_rate": 0.0025,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 56.39544280395178,
+          "rel_gain_vs_control": 0.033128841633145216,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "scope-replay",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 56.13277542849907,
+          "rel_gain_vs_control": 0.03763214007255999,
+          "verdict": "inconclusive"
+        }
+      ]
+    },
+    {
+      "batch": "batch-005-aging2p0",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "action": "hold",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 60.86305470268926,
+          "rel_gain_vs_control": 0.10207317927100043,
+          "verdict": "supported"
+        },
+        {
+          "arm": "scope-replay",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 61.981894277181915,
+          "rel_gain_vs_control": 0.08556667845638416,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "lr-down",
+          "data_scope": "recent",
+          "learning_rate": 0.0004,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 62.100265823785925,
+          "rel_gain_vs_control": 0.0838203154611956,
+          "verdict": "inconclusive"
+        }
+      ]
+    },
+    {
+      "batch": "batch-006-replaced",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "action": "rollback",
+      "trials": [
+        {
+          "arm": "base",
+          "data_scope": "recent",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 53.840521899992446,
+          "rel_gain_vs_control": -0.06471290836843795,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "lr-up",
+          "data_scope": "recent",
+          "learning_rate": 0.0025,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 53.90179681827615,
+          "rel_gain_vs_control": -0.06592463875576715,
+          "verdict": "inconclusive"
+        },
+        {
+          "arm": "scope-replay",
+          "data_scope": "replay",
+          "learning_rate": 0.001,
+          "batch_size": 256,
+          "epochs": 20,
+          "select_score": 52.26892677726811,
+          "rel_gain_vs_control": -0.03363413062178852,
+          "verdict": "supported"
+        }
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": "batch-000-clean",
+      "index": 0,
+      "action": "hold",
+      "version_before": "v0",
+      "version_after": "v0",
+      "drift": "none",
+      "severity": "none",
+      "trials": 2,
+      "rollback": false,
+      "arrival_online": 56.883527609058795,
+      "arrival_static": 56.883527609058795,
+      "after": 56.883527609058795,
+      "gate_passed": false,
+      "seconds": 0.5210122090065852,
+      "train_seconds": 0.25421300003654324,
+      "sample_epochs": 273375,
+      "error": null
+    },
+    {
+      "batch": "batch-001-clean",
+      "index": 1,
+      "action": "hold",
+      "version_before": "v0",
+      "version_after": "v0",
+      "drift": "none",
+      "severity": "none",
+      "trials": 2,
+      "rollback": false,
+      "arrival_online": 46.089336099009785,
+      "arrival_static": 46.089336099009785,
+      "after": 46.089336099009785,
+      "gate_passed": null,
+      "seconds": 0.4306517920049373,
+      "train_seconds": 0.1754596260143444,
+      "sample_epochs": 178596,
+      "error": null
+    },
+    {
+      "batch": "batch-002-aging0p5",
+      "index": 2,
+      "action": "promote",
+      "version_before": "v0",
+      "version_after": "v1",
+      "drift": "covariate_harmful",
+      "severity": "severe",
+      "trials": 4,
+      "rollback": false,
+      "arrival_online": 146.71943215005294,
+      "arrival_static": 146.71943215005294,
+      "after": 63.08755006123945,
+      "gate_passed": true,
+      "seconds": 1.6131007919902913,
+      "train_seconds": 1.1025505819998216,
+      "sample_epochs": 1194712,
+      "error": null
+    },
+    {
+      "batch": "batch-003-aging1p0",
+      "index": 3,
+      "action": "hold",
+      "version_before": "v1",
+      "version_after": "v1",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "trials": 3,
+      "rollback": false,
+      "arrival_online": 55.06234435991207,
+      "arrival_static": 144.55495366293582,
+      "after": 55.06234435991207,
+      "gate_passed": false,
+      "seconds": 0.7992497509985697,
+      "train_seconds": 0.451308833056828,
+      "sample_epochs": 432952,
+      "error": null
+    },
+    {
+      "batch": "batch-004-aging1p5",
+      "index": 4,
+      "action": "hold",
+      "version_before": "v1",
+      "version_after": "v1",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "trials": 3,
+      "rollback": false,
+      "arrival_online": 48.16355676997582,
+      "arrival_static": 126.80253219294414,
+      "after": 48.16355676997582,
+      "gate_passed": false,
+      "seconds": 0.7822780839924235,
+      "train_seconds": 0.42543220898369327,
+      "sample_epochs": 386771,
+      "error": null
+    },
+    {
+      "batch": "batch-005-aging2p0",
+      "index": 5,
+      "action": "hold",
+      "version_before": "v1",
+      "version_after": "v1",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "trials": 3,
+      "rollback": false,
+      "arrival_online": 42.59911351513984,
+      "arrival_static": 115.33801903335323,
+      "after": 42.59911351513984,
+      "gate_passed": false,
+      "seconds": 0.8892613759962842,
+      "train_seconds": 0.5264987510163337,
+      "sample_epochs": 455546,
+      "error": null
+    },
+    {
+      "batch": "batch-006-replaced",
+      "index": 6,
+      "action": "rollback",
+      "version_before": "v1",
+      "version_after": "v0",
+      "drift": "covariate_benign",
+      "severity": "moderate",
+      "trials": 3,
+      "rollback": true,
+      "arrival_online": 52.719444819907366,
+      "arrival_static": 52.84790387883953,
+      "after": 52.84790387883953,
+      "gate_passed": null,
+      "seconds": 0.933304042002419,
+      "train_seconds": 0.5982972079946194,
+      "sample_epochs": 497504,
+      "error": null
+    },
+    {
+      "batch": "batch-007-replaced",
+      "index": 7,
+      "action": "hold",
+      "version_before": "v0",
+      "version_after": "v0",
+      "drift": "none",
+      "severity": "none",
+      "trials": 0,
+      "rollback": false,
+      "arrival_online": 47.00520331407478,
+      "arrival_static": 47.00520331407478,
+      "after": 47.00520331407478,
+      "gate_passed": null,
+      "seconds": 0.10663100000238046,
+      "train_seconds": 0,
+      "sample_epochs": 0,
+      "error": null
+    }
+  ],
+  "arms": {
+    "base": {
+      "tried": 7,
+      "supported": 4,
+      "promoted": 0,
+      "gain_sum": 0.8240052372176405
+    },
+    "lr-down": {
+      "tried": 3,
+      "supported": 0,
+      "promoted": 0,
+      "gain_sum": 0.281676425004826
+    },
+    "scope-recent": {
+      "tried": 2,
+      "supported": 1,
+      "promoted": 0,
+      "gain_sum": 0.5096053115465257
+    },
+    "lr-up": {
+      "tried": 3,
+      "supported": 0,
+      "promoted": 0,
+      "gain_sum": 0.5260647538296751
+    },
+    "scope-cumulative": {
+      "tried": 1,
+      "supported": 0,
+      "promoted": 1,
+      "gain_sum": 0.5559543018639717
+    },
+    "scope-replay": {
+      "tried": 4,
+      "supported": 1,
+      "promoted": 0,
+      "gain_sum": 0.27496045022722804
+    }
+  },
+  "started_at": "2026-11-15T12:51:53+00:00",
+  "llm": {
+    "calls": 0,
+    "failures": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  }
+}

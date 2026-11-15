@@ -1,0 +1,36 @@
+{
+  "versions": {
+    "v0": {
+      "version": "v0",
+      "role": "official_static_baseline",
+      "parent": null,
+      "parent_sha256": null,
+      "sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+      "batch": null,
+      "trial": null,
+      "created_at": "2026-11-15T12:51:53+00:00",
+      "steps": 6630,
+      "epochs": 15
+    },
+    "v1": {
+      "version": "v1",
+      "role": "promoted_candidate",
+      "parent": "v0",
+      "parent_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+      "sha256": "sha256:f4ae7b216f76c2bea11390ed9d282f34129e658ec31c520fc00fb1e16cc2a98a",
+      "batch": "batch-002-aging0p5",
+      "trial": "b002-t4-scope-cumulative",
+      "created_at": "2026-11-15T12:51:58+00:00",
+      "steps": 8520,
+      "epochs": 29,
+      "gate": {
+        "sanity": true,
+        "enough_units": true,
+        "gain_vs_incumbent": true,
+        "not_worse_than_static": true,
+        "retention": true,
+        "safety_asymmetric": true
+      }
+    }
+  }
+}

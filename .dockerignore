@@ -1,0 +1,7 @@
+**/__pycache__
+*.zip
+*.pdf
+cpu-c-guide-20261110-v1/public
+runs
+work
+tests

@@ -1,0 +1,243 @@
+{
+  "format": "harness.decision.v1",
+  "batch": "batch-007-replaced",
+  "batch_index": 7,
+  "action": "hold",
+  "model": {
+    "version": "v0",
+    "sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+    "checkpoint": "registry/v0/checkpoint.npz"
+  },
+  "previous_version": "v0",
+  "reasons": [
+    "未见漂移，例行实验轮数已满，本批不做实验"
+  ],
+  "rows": {
+    "train_new": 12330,
+    "validation_new": 2932,
+    "fit": 9898,
+    "select": 2432,
+    "gate": 2932,
+    "gate_source": "validation",
+    "retention": 20000,
+    "history": 84968,
+    "repeated": 0
+  },
+  "data": {
+    "train_sha256": "sha256:66392b5c8db3b6d7086a34c9b180ff3e620168ab17ffd3339588a3d89ed284de",
+    "validation_sha256": "sha256:7ef838c0866274e4350502ffde5884b2cd98c458cdcb5c9b212bf0919e3b0a83"
+  },
+  "arrival": {
+    "online_version": "v0",
+    "online": {
+      "n": 2932,
+      "rmse": 47.00520331407478,
+      "mae": 36.769137856522946,
+      "bias": 0.9718196109003159,
+      "over_rate": 0.5501364256480218,
+      "nasa_exponent_mean": 3.2638678058951105,
+      "nasa_score": 3052021.170862803
+    },
+    "static": {
+      "n": 2932,
+      "rmse": 47.00520331407478,
+      "mae": 36.769137856522946,
+      "bias": 0.9718196109003159,
+      "over_rate": 0.5501364256480218,
+      "nasa_exponent_mean": 3.2638678058951105,
+      "nasa_score": 3052021.170862803
+    }
+  },
+  "after": {
+    "version": "v0",
+    "metrics": {
+      "n": 2932,
+      "rmse": 47.00520331407478,
+      "mae": 36.769137856522946,
+      "bias": 0.9718196109003159,
+      "over_rate": 0.5501364256480218,
+      "nasa_exponent_mean": 3.2638678058951105,
+      "nasa_score": 3052021.170862803
+    }
+  },
+  "drift": {
+    "inputs": {
+      "method": "binned_vs_reference",
+      "reference_batch": "batch-000-clean",
+      "n_features": 24,
+      "n_alert": 0,
+      "n_warn": 0,
+      "share_alert": 0.0,
+      "psi_max": 0.0371116967162433,
+      "psi_median": 0.0188638697674409,
+      "flag": false,
+      "features": [
+        {
+          "feature": "sensors[6]",
+          "index": 6,
+          "psi": 0.0371116967162433,
+          "ks": 0.062995543673379,
+          "shift_z": 0.11023202016244335,
+          "threshold": 0.2670851317930561,
+          "alert": false
+        },
+        {
+          "feature": "sensors[11]",
+          "index": 11,
+          "psi": 0.033900693633844695,
+          "ks": 0.06171029844781417,
+          "shift_z": 0.11024443294108445,
+          "threshold": 0.3033842766453415,
+          "alert": false
+        },
+        {
+          "feature": "sensors[5]",
+          "index": 5,
+          "psi": 0.03266653928767372,
+          "ks": 0.07221979780904497,
+          "shift_z": 0.10868028712406894,
+          "threshold": 0.6518423820112532,
+          "alert": false
+        },
+        {
+          "feature": "sensors[20]",
+          "index": 20,
+          "psi": 0.02947096209514532,
+          "ks": 0.06152078589777554,
+          "shift_z": 0.10944691622745795,
+          "threshold": 0.264215337827931,
+          "alert": false
+        },
+        {
+          "feature": "sensors[19]",
+          "index": 19,
+          "psi": 0.028677783843444566,
+          "ks": 0.06118795224875806,
+          "shift_z": 0.10958143378364783,
+          "threshold": 0.25,
+          "alert": false
+        },
+        {
+          "feature": "sensors[14]",
+          "index": 14,
+          "psi": 0.026218207155551496,
+          "ks": 0.06421943848549205,
+          "shift_z": -0.09015133096841765,
+          "threshold": 0.300102804545979,
+          "alert": false
+        },
+        {
+          "feature": "sensors[8]",
+          "index": 8,
+          "psi": 0.025512702127713907,
+          "ks": 0.06583501638648104,
+          "shift_z": 0.10496484409344639,
+          "threshold": 0.25,
+          "alert": false
+        },
+        {
+          "feature": "sensors[10]",
+          "index": 10,
+          "psi": 0.02521177388909231,
+          "ks": 0.06109087364111643,
+          "shift_z": 0.08831044299636645,
+          "threshold": 0.25,
+          "alert": false
+        }
+      ]
+    },
+    "target": {
+      "method": "binned_vs_reference",
+      "psi": 0.02930715230610879,
+      "threshold": 0.2635213480915656,
+      "flag": false
+    },
+    "performance": {
+      "anchor": 56.883527609058795,
+      "anchor_high": 65.77802987600565,
+      "score": 54.52182240715829,
+      "ci_low": 46.191561175530644,
+      "ratio": 0.9584817380150594,
+      "flag": false,
+      "severe": false
+    }
+  },
+  "diagnosis": {
+    "kind": "none",
+    "severity": "none",
+    "flag": false,
+    "meaning": "未见漂移",
+    "summary": "输入分布稳定（越线特征 0 个，PSI 最大 0.04）；在线模型主指标相对锚点 -4.2%。结论：未见漂移。",
+    "top_features": [],
+    "error_profile": {
+      "by_target_tercile": [
+        {
+          "segment": "low",
+          "n": 4160,
+          "rmse": 39.68281522064465,
+          "bias": 25.716211794769787
+        },
+        {
+          "segment": "mid",
+          "n": 4078,
+          "rmse": 44.695694897049094,
+          "bias": 26.627899629953284
+        },
+        {
+          "segment": "high",
+          "n": 4092,
+          "rmse": 73.24855587060182,
+          "bias": -44.86831245463363
+        }
+      ]
+    }
+  },
+  "rollback": {
+    "triggered": false,
+    "from": "v0",
+    "to": null,
+    "n": 12330,
+    "margin": 0.02,
+    "comparisons": [
+      {
+        "fallback": "v1",
+        "production": 54.52182240715829,
+        "fallback_score": 54.726136588167705,
+        "rel_worse": -0.0037333931051436614,
+        "delta_ci_low": -1.0647965990824233,
+        "rule": "significant_margin",
+        "eligible": false
+      }
+    ]
+  },
+  "experiments": {
+    "triggered_by": [],
+    "trials": [],
+    "policy_before": {
+      "data_scope": "replay",
+      "replay_ratio": 0.5,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 20,
+      "lr_direction": -1
+    },
+    "policy_after": {
+      "data_scope": "replay",
+      "replay_ratio": 0.5,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 20,
+      "lr_direction": -1
+    },
+    "policy_changes": [],
+    "llm": null
+  },
+  "gate": null,
+  "cost": {
+    "trials": 0,
+    "train_seconds": 0,
+    "sample_epochs": 0
+  },
+  "decided_at": "2026-11-15T12:52:06+00:00",
+  "seconds": 0.10663100000238046
+}

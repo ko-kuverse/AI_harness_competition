@@ -12,6 +12,22 @@
 | `赛题.txt` | 赛道速览：C 赛道为发动机剩余寿命预测 |
 | `赛题逐字稿.txt` | 赛题说明会的逐字记录 |
 | `harness工程.md` | 赛题要点整理 |
+| `harness/` | Harness 最小闭环：漂移检测、受控实验、SwanLab 记录、门控上线与回滚，说明见 [harness/README.md](harness/README.md) |
+| `tests/` | Harness 的单元与闭环测试（合成数据） |
+| `configs/harness.json` | Harness 全部阈值与预算的默认值 |
+| `runs/` | 两个本地漂移场景的运行输出（决策、报告、留出评分、实验台账） |
+| `Dockerfile`、`requirements.txt` | 运行镜像与依赖 |
+
+## Harness 最小闭环
+
+```sh
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/python -m harness simulate --public cpu-c-guide-20261110-v1/public --out work/sim --scenario sensor-aging --seed 59
+.venv/bin/python -m harness run --stream work/sim/stream --workdir work/run
+.venv/bin/python -m harness score --workdir work/run --hidden work/sim/hidden
+```
+
+每一批依次做漂移检测、回滚核对、归因、受控实验和门控，交出 promote、hold 或 rollback 的决策后再取下一批。工业模型始终由官方 `baselines` 代码训练，基线包文件未改动。各步做法、输出目录、本地验证结果与已知局限见 [harness/README.md](harness/README.md)。
 
 ## 基线包 `cpu-c-guide-20261110-v1/`
 

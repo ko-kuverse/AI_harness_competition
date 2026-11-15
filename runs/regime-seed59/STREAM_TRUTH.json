@@ -1,0 +1,127 @@
+{
+  "scenario": "regime",
+  "seed": 59,
+  "hidden_fraction": 0.15,
+  "batches": [
+    {
+      "name": "batch-000-fd001a",
+      "rows": {
+        "train": 6131,
+        "validation": 1683,
+        "hidden_test": 1011
+      },
+      "engines": {
+        "train": 30,
+        "validation": 8,
+        "hidden_test": 5
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-001-fd001b",
+      "rows": {
+        "train": 6115,
+        "validation": 1527,
+        "hidden_test": 873
+      },
+      "engines": {
+        "train": 30,
+        "validation": 7,
+        "hidden_test": 5
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-002-fd003a",
+      "rows": {
+        "train": 7795,
+        "validation": 1990,
+        "hidden_test": 1317
+      },
+      "engines": {
+        "train": 30,
+        "validation": 8,
+        "hidden_test": 5
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-003-fd003b",
+      "rows": {
+        "train": 7384,
+        "validation": 1565,
+        "hidden_test": 1033
+      },
+      "engines": {
+        "train": 30,
+        "validation": 7,
+        "hidden_test": 5
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-004-fd002a",
+      "rows": {
+        "train": 16092,
+        "validation": 3822,
+        "hidden_test": 2726
+      },
+      "engines": {
+        "train": 78,
+        "validation": 20,
+        "hidden_test": 14
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-005-fd002b",
+      "rows": {
+        "train": 16708,
+        "validation": 3759,
+        "hidden_test": 2508
+      },
+      "engines": {
+        "train": 77,
+        "validation": 19,
+        "hidden_test": 13
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-006-fd004a",
+      "rows": {
+        "train": 17932,
+        "validation": 4807,
+        "hidden_test": 3303
+      },
+      "engines": {
+        "train": 74,
+        "validation": 19,
+        "hidden_test": 13
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    },
+    {
+      "name": "batch-007-fd004b",
+      "rows": {
+        "train": 19256,
+        "validation": 3896,
+        "hidden_test": 2905
+      },
+      "engines": {
+        "train": 74,
+        "validation": 18,
+        "hidden_test": 13
+      },
+      "injected_offset_sigma": 0.0,
+      "drifted_features": []
+    }
+  ]
+}

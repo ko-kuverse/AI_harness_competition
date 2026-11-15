@@ -1,0 +1,16 @@
+{
+  "versions": {
+    "v0": {
+      "version": "v0",
+      "role": "official_static_baseline",
+      "parent": null,
+      "parent_sha256": null,
+      "sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+      "batch": null,
+      "trial": null,
+      "created_at": "2026-11-15T12:51:20+00:00",
+      "steps": 6630,
+      "epochs": 15
+    }
+  }
+}

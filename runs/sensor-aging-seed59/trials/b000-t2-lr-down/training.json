@@ -1,0 +1,70 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b000-t2-lr-down",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 10125,
+  "train_matrix_sha256": "sha256:d5b5b7867ac94644b85cb1dd46673599658d17b6ee3c29c57836f082e78bf102",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:eadf5cc7e871dab0d8a2ea1958c50723503fbb363182092407e922d4e00af77c",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 7190,
+  "final_epochs": 29,
+  "epochs_run": 19,
+  "best_epoch": 14,
+  "training_seconds": 0.17973975001950748,
+  "learning_rate": 0.0004,
+  "batch_size": 256,
+  "select_before": {
+    "n": 2563,
+    "rmse": 63.683279011328,
+    "mae": 46.89220014476042,
+    "bias": -0.3372210030918576,
+    "over_rate": 0.6039797112758486,
+    "nasa_exponent_mean": 4.144265155077747,
+    "nasa_score": 6920735338.819402
+  },
+  "select_after": {
+    "n": 2563,
+    "rmse": 61.893418505619906,
+    "mae": 45.870009996723624,
+    "bias": 2.495608934108515,
+    "over_rate": 0.6215372610222396,
+    "nasa_exponent_mean": 4.086527141257573,
+    "nasa_score": 9705020369.005003
+  },
+  "retention_before": {
+    "n": 0
+  },
+  "retention_after": {
+    "n": 0
+  },
+  "spec": {
+    "trial_id": "t2-lr-down",
+    "arm": "lr-down",
+    "hypothesis": "现有步长可能在新旧分布之间来回震荡；学习率缩小到 0.0004 应使选型集误差低于基准试验。",
+    "changed_factor": "learning_rate",
+    "data_scope": "recent",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.0004,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:55+00:00"
+}

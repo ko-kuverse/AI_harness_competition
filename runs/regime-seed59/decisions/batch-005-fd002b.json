@@ -1,0 +1,647 @@
+{
+  "format": "harness.decision.v1",
+  "batch": "batch-005-fd002b",
+  "batch_index": 5,
+  "action": "hold",
+  "model": {
+    "version": "v0",
+    "sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+    "checkpoint": "registry/v0/checkpoint.npz"
+  },
+  "previous_version": "v0",
+  "reasons": [
+    "漂移（covariate_benign，severe）",
+    "b005-t4-scope-cumulative 未通过门控（gain_vs_incumbent）"
+  ],
+  "rows": {
+    "train_new": 16708,
+    "validation_new": 3759,
+    "fit": 13323,
+    "select": 3385,
+    "gate": 3759,
+    "gate_source": "validation",
+    "retention": 10587,
+    "history": 43517,
+    "repeated": 0
+  },
+  "data": {
+    "train_sha256": "sha256:f19aaa861160aaaed001ac1ae969ea004264e9f44ccfc5a4f2a3aa6f6ddeeb7c",
+    "validation_sha256": "sha256:7ec23e60bc9c9e3dd06723dc60515c7bd6d5b6bd63da8fce8003806b0c6ef62c"
+  },
+  "arrival": {
+    "online_version": "v0",
+    "online": {
+      "n": 3759,
+      "rmse": 41.673128800520914,
+      "mae": 30.9538945280513,
+      "bias": -5.838821199540497,
+      "over_rate": 0.4836392657621708,
+      "nasa_exponent_mean": 2.670858117486763,
+      "nasa_score": 4285981.978415283
+    },
+    "static": {
+      "n": 3759,
+      "rmse": 41.673128800520914,
+      "mae": 30.9538945280513,
+      "bias": -5.838821199540497,
+      "over_rate": 0.4836392657621708,
+      "nasa_exponent_mean": 2.670858117486763,
+      "nasa_score": 4285981.978415283
+    }
+  },
+  "after": {
+    "version": "v0",
+    "metrics": {
+      "n": 3759,
+      "rmse": 41.673128800520914,
+      "mae": 30.9538945280513,
+      "bias": -5.838821199540497,
+      "over_rate": 0.4836392657621708,
+      "nasa_exponent_mean": 2.670858117486763,
+      "nasa_score": 4285981.978415283
+    }
+  },
+  "drift": {
+    "inputs": {
+      "method": "binned_vs_reference",
+      "reference_batch": "batch-000-fd001a",
+      "n_features": 24,
+      "n_alert": 24,
+      "n_warn": 24,
+      "share_alert": 1.0,
+      "psi_max": 10.0,
+      "psi_median": 9.70611756855043,
+      "flag": true,
+      "features": [
+        {
+          "feature": "settings[0]",
+          "index": 21,
+          "psi": 10.0,
+          "ks": 0.8513885563801772,
+          "shift_z": 1.4509428668876598,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "settings[1]",
+          "index": 22,
+          "psi": 10.0,
+          "ks": 0.9020103294584485,
+          "shift_z": 1.5555005939614983,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "sensors[8]",
+          "index": 8,
+          "psi": 9.718569636719737,
+          "ks": 0.8514484079482882,
+          "shift_z": -1.4315594072690505,
+          "threshold": 0.3912369662312708,
+          "alert": true
+        },
+        {
+          "feature": "sensors[7]",
+          "index": 7,
+          "psi": 9.71765310132247,
+          "ks": 0.8513885563801772,
+          "shift_z": -1.1116255696360793,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "sensors[10]",
+          "index": 10,
+          "psi": 9.708990670324148,
+          "ks": 0.8513885563801772,
+          "shift_z": -1.32832636076006,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "sensors[3]",
+          "index": 3,
+          "psi": 9.708552146933872,
+          "ks": 0.8513885563801772,
+          "shift_z": -1.4927936597156697,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "sensors[2]",
+          "index": 2,
+          "psi": 9.708263124298236,
+          "ks": 0.8514484079482882,
+          "shift_z": -1.4405571782351947,
+          "threshold": 0.25,
+          "alert": true
+        },
+        {
+          "feature": "sensors[19]",
+          "index": 19,
+          "psi": 9.706985124543497,
+          "ks": 0.8513885563801772,
+          "shift_z": -1.5408242778940626,
+          "threshold": 0.25,
+          "alert": true
+        }
+      ]
+    },
+    "target": {
+      "method": "binned_vs_reference",
+      "psi": 0.056239389005296916,
+      "threshold": 0.25,
+      "flag": false
+    },
+    "performance": {
+      "anchor": 43.177434513512495,
+      "anchor_high": 47.62826727122796,
+      "score": 49.23322613746346,
+      "ci_low": 43.5735381218298,
+      "ratio": 1.1402536230367228,
+      "flag": false,
+      "severe": false
+    }
+  },
+  "diagnosis": {
+    "kind": "covariate_benign",
+    "severity": "severe",
+    "flag": true,
+    "meaning": "输入漂移但精度尚未受损",
+    "summary": "输入漂移：24/24 个特征越线，最显著的是 settings[0](PSI 10.00, 均值偏移 +1.45σ)、settings[1](PSI 10.00, 均值偏移 +1.56σ)、sensors[8](PSI 9.72, 均值偏移 -1.43σ)；在线模型主指标相对锚点 +14.0%。结论：输入漂移但精度尚未受损。",
+    "top_features": [
+      {
+        "feature": "settings[0]",
+        "psi": 10.0,
+        "ks": 0.8513885563801772,
+        "shift_z": 1.4509428668876598
+      },
+      {
+        "feature": "settings[1]",
+        "psi": 10.0,
+        "ks": 0.9020103294584485,
+        "shift_z": 1.5555005939614983
+      },
+      {
+        "feature": "sensors[8]",
+        "psi": 9.718569636719737,
+        "ks": 0.8514484079482882,
+        "shift_z": -1.4315594072690505
+      },
+      {
+        "feature": "sensors[7]",
+        "psi": 9.71765310132247,
+        "ks": 0.8513885563801772,
+        "shift_z": -1.1116255696360793
+      },
+      {
+        "feature": "sensors[10]",
+        "psi": 9.708990670324148,
+        "ks": 0.8513885563801772,
+        "shift_z": -1.32832636076006
+      }
+    ],
+    "error_profile": {
+      "by_target_tercile": [
+        {
+          "segment": "low",
+          "n": 5621,
+          "rmse": 33.05949029600973,
+          "bias": 18.498377305978376
+        },
+        {
+          "segment": "mid",
+          "n": 5539,
+          "rmse": 33.15293771296076,
+          "bias": 15.072724133829011
+        },
+        {
+          "segment": "high",
+          "n": 5548,
+          "rmse": 71.37960707088185,
+          "bias": -51.63591457208506
+        }
+      ]
+    }
+  },
+  "rollback": {
+    "triggered": false,
+    "from": "v0",
+    "to": null,
+    "n": 16708,
+    "comparisons": []
+  },
+  "experiments": {
+    "triggered_by": [
+      "漂移（covariate_benign，severe）"
+    ],
+    "trials": [
+      {
+        "trial": "b005-t1-base",
+        "arm": "base",
+        "source": "rule",
+        "hypothesis": "输入漂移但精度尚未受损。按当前策略（本批数据加历史回放，学习率 0.001，至多 20 轮）从在线模型续训，选型集主指标应低于不更新的对照。依据：上一轮（batch-004-fd002a）选型集最优的是 base，相对对照 +0.9%，该批决策为 hold。",
+        "changed_factor": null,
+        "data_scope": "replay",
+        "replay_ratio": 0.5,
+        "learning_rate": 0.001,
+        "batch_size": 256,
+        "epochs": 20,
+        "checkpoint_sha256": "sha256:5b92cef44addd6dee87c37c36856f2c05bd68ddc5421d6d3d6ebe86b0717fc6d",
+        "parent_version": "v0",
+        "train_rows": 19984,
+        "epochs_run": 11,
+        "best_epoch": 6,
+        "seconds": 0.21780337498057634,
+        "sample_epochs": 219824,
+        "control_select": {
+          "n": 3385,
+          "rmse": 58.82841963717431,
+          "mae": 43.07672052497015,
+          "bias": -11.16248221342803,
+          "over_rate": 0.4741506646971935,
+          "nasa_exponent_mean": 3.6818350978231895,
+          "nasa_score": 1099011622.8147407
+        },
+        "select": {
+          "n": 3385,
+          "rmse": 57.47113591902957,
+          "mae": 42.94866889408607,
+          "bias": -4.293448949107281,
+          "over_rate": 0.5293943870014771,
+          "nasa_exponent_mean": 3.749765529679453,
+          "nasa_score": 506397746.4916566
+        },
+        "select_score": 57.47113591902957,
+        "control_retention": {
+          "n": 10587,
+          "rmse": 46.7044786783142,
+          "mae": 36.878449454829145,
+          "bias": 14.848312490289405,
+          "over_rate": 0.6701615188438651,
+          "nasa_exponent_mean": 3.433651057430533,
+          "nasa_score": 203632067.9945033
+        },
+        "retention": {
+          "n": 10587,
+          "rmse": 45.438885213250344,
+          "mae": 35.305506377799276,
+          "bias": 9.69384696538511,
+          "over_rate": 0.6210446774345896,
+          "nasa_exponent_mean": 3.2350314907136104,
+          "nasa_score": 96028712.44688056
+        },
+        "retention_loss": -0.02709790368887033,
+        "rel_gain_vs_control": 0.023071905152574596,
+        "rel_gain_vs_base": 0.0,
+        "verdict": "inconclusive",
+        "evidence": {
+          "against": "control",
+          "rel_gain": 0.023071905152574596,
+          "delta_ci_low": -3.133414762866254,
+          "delta_ci_high": 1.34163391382001,
+          "clusters": 15
+        },
+        "sanity": {
+          "reload_max_abs_diff": 0.0,
+          "steps_before": 6630,
+          "steps_after": 7104,
+          "parameter_count": 833,
+          "ok": true
+        }
+      },
+      {
+        "trial": "b005-t2-scope-recent",
+        "arm": "scope-recent",
+        "source": "rule",
+        "hypothesis": "新批次的分布已整体切换，历史样本帮助有限；去掉回放、只用本批数据应不差于基准试验。",
+        "changed_factor": "data_scope",
+        "data_scope": "recent",
+        "replay_ratio": 0.5,
+        "learning_rate": 0.001,
+        "batch_size": 256,
+        "epochs": 20,
+        "checkpoint_sha256": "sha256:e34ade30ffd86314fe90ff2a1f635f97cf41f7ac7448ce5c27bb930faf940992",
+        "parent_version": "v0",
+        "train_rows": 13323,
+        "epochs_run": 20,
+        "best_epoch": 20,
+        "seconds": 0.28645537499687634,
+        "sample_epochs": 266460,
+        "control_select": {
+          "n": 3385,
+          "rmse": 58.82841963717431,
+          "mae": 43.07672052497015,
+          "bias": -11.16248221342803,
+          "over_rate": 0.4741506646971935,
+          "nasa_exponent_mean": 3.6818350978231895,
+          "nasa_score": 1099011622.8147407
+        },
+        "select": {
+          "n": 3385,
+          "rmse": 57.08386742644891,
+          "mae": 42.747809759606554,
+          "bias": -3.7112520514259244,
+          "over_rate": 0.5344165435745938,
+          "nasa_exponent_mean": 3.73871487814105,
+          "nasa_score": 481469268.46021724
+        },
+        "select_score": 57.08386742644891,
+        "control_retention": {
+          "n": 10587,
+          "rmse": 46.7044786783142,
+          "mae": 36.878449454829145,
+          "bias": 14.848312490289405,
+          "over_rate": 0.6701615188438651,
+          "nasa_exponent_mean": 3.433651057430533,
+          "nasa_score": 203632067.9945033
+        },
+        "retention": {
+          "n": 10587,
+          "rmse": 46.65623790491144,
+          "mae": 36.72921101889776,
+          "bias": 14.5364452081932,
+          "over_rate": 0.6661943893454236,
+          "nasa_exponent_mean": 3.416850727150876,
+          "nasa_score": 170775603.86012223
+        },
+        "retention_loss": -0.0010328939486730082,
+        "rel_gain_vs_control": 0.029654922255008202,
+        "rel_gain_vs_base": 0.006738486831481419,
+        "verdict": "inconclusive",
+        "evidence": {
+          "against": "b005-t1-base",
+          "rel_gain": 0.006738486831481419,
+          "delta_ci_low": -0.760940313731791,
+          "delta_ci_high": 0.06187296072760037,
+          "clusters": 15
+        },
+        "sanity": {
+          "reload_max_abs_diff": 0.0,
+          "steps_before": 6630,
+          "steps_after": 7690,
+          "parameter_count": 833,
+          "ok": true
+        }
+      },
+      {
+        "trial": "b005-t3-lr-down",
+        "arm": "lr-down",
+        "source": "rule",
+        "hypothesis": "现有步长可能在新旧分布之间来回震荡；学习率缩小到 0.0004 应使选型集误差低于基准试验。",
+        "changed_factor": "learning_rate",
+        "data_scope": "replay",
+        "replay_ratio": 0.5,
+        "learning_rate": 0.0004,
+        "batch_size": 256,
+        "epochs": 20,
+        "checkpoint_sha256": "sha256:654cb970ad6fbea41ca2e8b86d0123127410fb3bd6bb1157652b8d4d846e895c",
+        "parent_version": "v0",
+        "train_rows": 19984,
+        "epochs_run": 14,
+        "best_epoch": 9,
+        "seconds": 0.2778170410019811,
+        "sample_epochs": 279776,
+        "control_select": {
+          "n": 3385,
+          "rmse": 58.82841963717431,
+          "mae": 43.07672052497015,
+          "bias": -11.16248221342803,
+          "over_rate": 0.4741506646971935,
+          "nasa_exponent_mean": 3.6818350978231895,
+          "nasa_score": 1099011622.8147407
+        },
+        "select": {
+          "n": 3385,
+          "rmse": 57.629137224487636,
+          "mae": 42.712985375548335,
+          "bias": -6.699985617445127,
+          "over_rate": 0.5122599704579025,
+          "nasa_exponent_mean": 3.701148872251063,
+          "nasa_score": 633323894.4689655
+        },
+        "select_score": 57.629137224487636,
+        "control_retention": {
+          "n": 10587,
+          "rmse": 46.7044786783142,
+          "mae": 36.878449454829145,
+          "bias": 14.848312490289405,
+          "over_rate": 0.6701615188438651,
+          "nasa_exponent_mean": 3.433651057430533,
+          "nasa_score": 203632067.9945033
+        },
+        "retention": {
+          "n": 10587,
+          "rmse": 45.45115297995013,
+          "mae": 35.45169356818132,
+          "bias": 11.0128382437471,
+          "over_rate": 0.6354019080003778,
+          "nasa_exponent_mean": 3.2631825646131225,
+          "nasa_score": 115368273.87804739
+        },
+        "retention_loss": -0.026835235802471713,
+        "rel_gain_vs_control": 0.020386106240542937,
+        "rel_gain_vs_base": -0.0027492288595212548,
+        "verdict": "inconclusive",
+        "evidence": {
+          "against": "b005-t1-base",
+          "rel_gain": -0.0027492288595212548,
+          "delta_ci_low": -0.8467750156149569,
+          "delta_ci_high": 0.7598674086532468,
+          "clusters": 15
+        },
+        "sanity": {
+          "reload_max_abs_diff": 0.0,
+          "steps_before": 6630,
+          "steps_after": 7341,
+          "parameter_count": 833,
+          "ok": true
+        }
+      },
+      {
+        "trial": "b005-t4-scope-cumulative",
+        "arm": "scope-cumulative",
+        "source": "rule",
+        "hypothesis": "漂移幅度大，用全部已见数据续训能给出更稳的折中，选型集误差应低于基准试验。",
+        "changed_factor": "data_scope",
+        "data_scope": "cumulative",
+        "replay_ratio": 0.5,
+        "learning_rate": 0.001,
+        "batch_size": 256,
+        "epochs": 20,
+        "checkpoint_sha256": "sha256:1f66252d151d5e05f5b5df7670efb03aabc73799489a1c99dd4f851e0f234842",
+        "parent_version": "v0",
+        "train_rows": 56840,
+        "epochs_run": 11,
+        "best_epoch": 6,
+        "seconds": 0.5586686659953557,
+        "sample_epochs": 625240,
+        "control_select": {
+          "n": 3385,
+          "rmse": 58.82841963717431,
+          "mae": 43.07672052497015,
+          "bias": -11.16248221342803,
+          "over_rate": 0.4741506646971935,
+          "nasa_exponent_mean": 3.6818350978231895,
+          "nasa_score": 1099011622.8147407
+        },
+        "select": {
+          "n": 3385,
+          "rmse": 57.85325734055982,
+          "mae": 42.70357980426825,
+          "bias": -8.193700279083934,
+          "over_rate": 0.49542097488921716,
+          "nasa_exponent_mean": 3.683081671772762,
+          "nasa_score": 729809013.9864593
+        },
+        "select_score": 57.85325734055982,
+        "control_retention": {
+          "n": 10587,
+          "rmse": 46.7044786783142,
+          "mae": 36.878449454829145,
+          "bias": 14.848312490289405,
+          "over_rate": 0.6701615188438651,
+          "nasa_exponent_mean": 3.433651057430533,
+          "nasa_score": 203632067.9945033
+        },
+        "retention": {
+          "n": 10587,
+          "rmse": 45.25738689200495,
+          "mae": 35.32074211093626,
+          "bias": 11.230807311123783,
+          "over_rate": 0.6337017096439029,
+          "nasa_exponent_mean": 3.2541134249419437,
+          "nasa_score": 134095656.62672484
+        },
+        "retention_loss": -0.030984004687780953,
+        "rel_gain_vs_control": 0.016576380984375052,
+        "rel_gain_vs_base": -0.006648927595038611,
+        "verdict": "inconclusive",
+        "evidence": {
+          "against": "b005-t1-base",
+          "rel_gain": -0.006648927595038611,
+          "delta_ci_low": -1.234949983745721,
+          "delta_ci_high": 1.3694359718031157,
+          "clusters": 15
+        },
+        "sanity": {
+          "reload_max_abs_diff": 0.0,
+          "steps_before": 6630,
+          "steps_after": 7968,
+          "parameter_count": 833,
+          "ok": true
+        }
+      }
+    ],
+    "policy_before": {
+      "data_scope": "replay",
+      "replay_ratio": 0.5,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 20,
+      "lr_direction": -1
+    },
+    "policy_after": {
+      "data_scope": "replay",
+      "replay_ratio": 0.5,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "epochs": 20,
+      "lr_direction": 1
+    },
+    "policy_changes": [],
+    "llm": null
+  },
+  "gate": {
+    "passed": false,
+    "checks": [
+      {
+        "name": "sanity",
+        "passed": true,
+        "reload_max_abs_diff": 0.0,
+        "steps_before": 6630,
+        "steps_after": 7968,
+        "parameter_count": 833
+      },
+      {
+        "name": "enough_units",
+        "passed": true,
+        "units": 19,
+        "need": 10
+      },
+      {
+        "name": "gain_vs_incumbent",
+        "passed": false,
+        "candidate": 40.73503723708985,
+        "incumbent": 41.673128800520914,
+        "rel_gain": 0.022510706309609736,
+        "need_rel_gain": 0.03,
+        "delta_ci_high": -0.13369448102396586,
+        "confidence": 0.95,
+        "clusters": 19
+      },
+      {
+        "name": "not_worse_than_static",
+        "passed": true,
+        "candidate": 40.73503723708985,
+        "static": 41.673128800520914,
+        "tolerance": 0.0
+      },
+      {
+        "name": "retention",
+        "passed": true,
+        "advisory": true,
+        "candidate": 45.25738689200495,
+        "incumbent": 46.7044786783142,
+        "rel_loss": -0.030984004687780953,
+        "tolerance": 0.1,
+        "n": 10587
+      },
+      {
+        "name": "safety_asymmetric",
+        "passed": true,
+        "metric": "nasa_exponent_mean",
+        "candidate": 2.6674896411801092,
+        "incumbent": 2.670858117486763,
+        "tolerance": 0.02
+      }
+    ],
+    "metrics": {
+      "candidate": {
+        "n": 3759,
+        "rmse": 40.73503723708985,
+        "mae": 30.585782552278708,
+        "bias": -3.308563998527331,
+        "over_rate": 0.5022612396914072,
+        "nasa_exponent_mean": 2.6674896411801092,
+        "nasa_score": 3093300.755329914
+      },
+      "incumbent": {
+        "n": 3759,
+        "rmse": 41.673128800520914,
+        "mae": 30.9538945280513,
+        "bias": -5.838821199540497,
+        "over_rate": 0.4836392657621708,
+        "nasa_exponent_mean": 2.670858117486763,
+        "nasa_score": 4285981.978415283
+      },
+      "static": {
+        "n": 3759,
+        "rmse": 41.673128800520914,
+        "mae": 30.9538945280513,
+        "bias": -5.838821199540497,
+        "over_rate": 0.4836392657621708,
+        "nasa_exponent_mean": 2.670858117486763,
+        "nasa_score": 4285981.978415283
+      }
+    },
+    "candidate_trial": "b005-t4-scope-cumulative"
+  },
+  "cost": {
+    "trials": 4,
+    "train_seconds": 1.3407444569747895,
+    "sample_epochs": 1391300
+  },
+  "decided_at": "2026-11-15T12:51:29+00:00",
+  "seconds": 1.763828041992383
+}

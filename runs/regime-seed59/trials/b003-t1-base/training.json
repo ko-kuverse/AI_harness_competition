@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b003-t1-base",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 8278,
+  "train_matrix_sha256": "sha256:d07e97f1232782e6b344af774bbcf0ac1bc61f5fb6889a4dc80c177d5f1ba3dc",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:1a63fd9530bd64e1f750f9353bb1e4c7bdf9da8137fcf222709ff2beeb0cc019",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 6729,
+  "final_epochs": 18,
+  "epochs_run": 8,
+  "best_epoch": 3,
+  "training_seconds": 0.07334025000454858,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "select_before": {
+    "n": 1865,
+    "rmse": 85.06982354174308,
+    "mae": 60.75711090266988,
+    "bias": -19.421435289718442,
+    "over_rate": 0.5184986595174262,
+    "nasa_exponent_mean": 5.150574018816353,
+    "nasa_score": 7307743790.436588
+  },
+  "select_after": {
+    "n": 1865,
+    "rmse": 88.41927697476716,
+    "mae": 61.23679161265436,
+    "bias": -28.78784206615277,
+    "over_rate": 0.4734584450402145,
+    "nasa_exponent_mean": 5.08493338804843,
+    "nasa_score": 15280968288.734833
+  },
+  "retention_before": {
+    "n": 5200,
+    "rmse": 46.59579633837359,
+    "mae": 36.891874106779845,
+    "bias": 11.656569897254382,
+    "over_rate": 0.6567307692307692,
+    "nasa_exponent_mean": 3.398010823644998,
+    "nasa_score": 16237097.80127601
+  },
+  "retention_after": {
+    "n": 5200,
+    "rmse": 45.61663416197079,
+    "mae": 35.35739397439329,
+    "bias": 5.351073709505423,
+    "over_rate": 0.6130769230769231,
+    "nasa_exponent_mean": 3.189512625152161,
+    "nasa_score": 26679028.04007315
+  },
+  "spec": {
+    "trial_id": "t1-base",
+    "arm": "base",
+    "hypothesis": "输入漂移但精度尚未受损。按当前策略（本批数据加历史回放，学习率 0.001，至多 20 轮）从在线模型续训，选型集主指标应低于不更新的对照。依据：上一轮（batch-002-fd003a）选型集最优的是 lr-up，相对对照 -0.1%，该批决策为 hold。",
+    "changed_factor": null,
+    "data_scope": "replay",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:24+00:00"
+}

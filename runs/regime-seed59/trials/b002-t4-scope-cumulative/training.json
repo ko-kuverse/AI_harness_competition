@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b002-t4-scope-cumulative",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 18183,
+  "train_matrix_sha256": "sha256:7f1bcf559276039f138ede08bb51e3314964985ff1fa70423f476024c52dd0b0",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:70d1c55291adfb4f20d962595fefc0572fe86e8006ee7a726a0756dece4057c2",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 6774,
+  "final_epochs": 17,
+  "epochs_run": 7,
+  "best_epoch": 2,
+  "training_seconds": 0.11620666598901153,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "select_before": {
+    "n": 1858,
+    "rmse": 73.5812487175011,
+    "mae": 54.69698158139055,
+    "bias": -6.198916753563799,
+    "over_rate": 0.5877287405812702,
+    "nasa_exponent_mean": 4.76705317735112,
+    "nasa_score": 7014359608.681602
+  },
+  "select_after": {
+    "n": 1858,
+    "rmse": 74.22671151327661,
+    "mae": 55.51224238269357,
+    "bias": -6.018368664093254,
+    "over_rate": 0.5952637244348762,
+    "nasa_exponent_mean": 4.841255649267971,
+    "nasa_score": 5354468589.551969
+  },
+  "retention_before": {
+    "n": 3210,
+    "rmse": 42.83453261937968,
+    "mae": 34.585928881674825,
+    "bias": 12.236425860713702,
+    "over_rate": 0.6632398753894081,
+    "nasa_exponent_mean": 3.200714007156393,
+    "nasa_score": 1577040.5672952253
+  },
+  "retention_after": {
+    "n": 3210,
+    "rmse": 44.331315498712286,
+    "mae": 36.490769769787285,
+    "bias": 16.4767569455149,
+    "over_rate": 0.7080996884735202,
+    "nasa_exponent_mean": 3.4181460597755855,
+    "nasa_score": 1662895.3716970203
+  },
+  "spec": {
+    "trial_id": "t4-scope-cumulative",
+    "arm": "scope-cumulative",
+    "hypothesis": "漂移幅度大，用全部已见数据续训能给出更稳的折中，选型集误差应低于基准试验。",
+    "changed_factor": "data_scope",
+    "data_scope": "cumulative",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:23+00:00"
+}

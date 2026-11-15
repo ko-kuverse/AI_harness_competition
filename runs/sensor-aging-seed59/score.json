@@ -1,0 +1,240 @@
+{
+  "generated_at": "2026-11-15T12:52:22+00:00",
+  "primary_metric": "rmse",
+  "batches": 8,
+  "samples": 15791,
+  "mean_chosen": 50.66420798293298,
+  "mean_static": 88.69323220174432,
+  "mean_rel_gain": 0.2930713297798629,
+  "worst_rel_gain": 0.0,
+  "worst_batch": "batch-000-clean",
+  "batches_not_worse_than_static": 8,
+  "significantly_better": 0,
+  "significantly_worse": 0,
+  "rows": [
+    {
+      "batch": "batch-000-clean",
+      "index": 0,
+      "action": "hold",
+      "version": "v0",
+      "n": 2107,
+      "units": 10,
+      "chosen": {
+        "n": 2107,
+        "rmse": 43.26346248615421,
+        "mae": 35.3758910901825,
+        "bias": 18.812584153763027,
+        "over_rate": 0.7166587565258662,
+        "nasa_exponent_mean": 3.34647402898264,
+        "nasa_score": 1964789.7348716692
+      },
+      "static": {
+        "n": 2107,
+        "rmse": 43.26346248615421,
+        "mae": 35.3758910901825,
+        "bias": 18.812584153763027,
+        "over_rate": 0.7166587565258662,
+        "nasa_exponent_mean": 3.34647402898264,
+        "nasa_score": 1964789.7348716692
+      },
+      "rel_gain": 0.0,
+      "versus_static": "same_model"
+    },
+    {
+      "batch": "batch-001-clean",
+      "index": 1,
+      "action": "hold",
+      "version": "v0",
+      "n": 1937,
+      "units": 10,
+      "chosen": {
+        "n": 1937,
+        "rmse": 37.794371112431364,
+        "mae": 30.92661304438962,
+        "bias": 17.61641919357236,
+        "over_rate": 0.7186370676303562,
+        "nasa_exponent_mean": 2.9390821446218403,
+        "nasa_score": 1281465.120869889
+      },
+      "static": {
+        "n": 1937,
+        "rmse": 37.794371112431364,
+        "mae": 30.92661304438962,
+        "bias": 17.61641919357236,
+        "over_rate": 0.7186370676303562,
+        "nasa_exponent_mean": 2.9390821446218403,
+        "nasa_score": 1281465.120869889
+      },
+      "rel_gain": 0.0,
+      "versus_static": "same_model"
+    },
+    {
+      "batch": "batch-002-aging0p5",
+      "index": 2,
+      "action": "promote",
+      "version": "v1",
+      "n": 2031,
+      "units": 9,
+      "chosen": {
+        "n": 2031,
+        "rmse": 57.54845286710492,
+        "mae": 44.52894668818414,
+        "bias": 15.349807597196756,
+        "over_rate": 0.6366322008862629,
+        "nasa_exponent_mean": 4.116212294691636,
+        "nasa_score": 307533943.87128806
+      },
+      "static": {
+        "n": 2031,
+        "rmse": 122.3413094306428,
+        "mae": 102.30617605246034,
+        "bias": -102.27268786617553,
+        "over_rate": 0.0014771048744460858,
+        "nasa_exponent_mean": 7.870092252338698,
+        "nasa_score": 65971364143.91249
+      },
+      "rel_gain": 0.529607349022776,
+      "versus_static": "too_few_units"
+    },
+    {
+      "batch": "batch-003-aging1p0",
+      "index": 3,
+      "action": "hold",
+      "version": "v1",
+      "n": 1940,
+      "units": 9,
+      "chosen": {
+        "n": 1940,
+        "rmse": 54.05218047173849,
+        "mae": 46.14600790017792,
+        "bias": 30.10658978543584,
+        "over_rate": 0.7768041237113402,
+        "nasa_exponent_mean": 4.429530581001537,
+        "nasa_score": 4443632.237377187
+      },
+      "static": {
+        "n": 1940,
+        "rmse": 139.7841078205071,
+        "mae": 116.59759030437661,
+        "bias": -116.59759030437661,
+        "over_rate": 0.0,
+        "nasa_exponent_mean": 8.96904540802897,
+        "nasa_score": 793630660655.1312
+      },
+      "rel_gain": 0.6133166973376873,
+      "versus_static": "too_few_units"
+    },
+    {
+      "batch": "batch-004-aging1p5",
+      "index": 4,
+      "action": "hold",
+      "version": "v1",
+      "n": 1606,
+      "units": 9,
+      "chosen": {
+        "n": 1606,
+        "rmse": 42.130504740782136,
+        "mae": 34.56973402699799,
+        "bias": 15.727261231258568,
+        "over_rate": 0.6917808219178082,
+        "nasa_exponent_mean": 3.2395602550566522,
+        "nasa_score": 1156186.761200201
+      },
+      "static": {
+        "n": 1606,
+        "rmse": 105.32698892149033,
+        "mae": 90.30386052303861,
+        "bias": -90.30386052303861,
+        "over_rate": 0.0,
+        "nasa_exponent_mean": 6.946450809464508,
+        "nasa_score": 513578739.04197484
+      },
+      "rel_gain": 0.6000027611898618,
+      "versus_static": "too_few_units"
+    },
+    {
+      "batch": "batch-005-aging2p0",
+      "index": 5,
+      "action": "hold",
+      "version": "v1",
+      "n": 2148,
+      "units": 9,
+      "chosen": {
+        "n": 2148,
+        "rmse": 59.928455652038615,
+        "mae": 44.165333237448145,
+        "bias": -10.38345119993437,
+        "over_rate": 0.5363128491620112,
+        "nasa_exponent_mean": 3.787124272544247,
+        "nasa_score": 516394118.43985295
+      },
+      "static": {
+        "n": 2148,
+        "rmse": 150.43938130951474,
+        "mae": 126.2877094972067,
+        "bias": -126.2877094972067,
+        "over_rate": 0.0,
+        "nasa_exponent_mean": 9.714439192092824,
+        "nasa_score": 15670845077580.8
+      },
+      "rel_gain": 0.6016438306885781,
+      "versus_static": "too_few_units"
+    },
+    {
+      "batch": "batch-006-replaced",
+      "index": 6,
+      "action": "rollback",
+      "version": "v0",
+      "n": 2177,
+      "units": 9,
+      "chosen": {
+        "n": 2177,
+        "rmse": 64.02277707073324,
+        "mae": 42.56812241065955,
+        "bias": -12.466471648319446,
+        "over_rate": 0.5075792374827744,
+        "nasa_exponent_mean": 3.6217976942315815,
+        "nasa_score": 6232200395.520626
+      },
+      "static": {
+        "n": 2177,
+        "rmse": 64.02277707073324,
+        "mae": 42.56812241065955,
+        "bias": -12.466471648319446,
+        "over_rate": 0.5075792374827744,
+        "nasa_exponent_mean": 3.6217976942315815,
+        "nasa_score": 6232200395.520626
+      },
+      "rel_gain": 0.0,
+      "versus_static": "same_model"
+    },
+    {
+      "batch": "batch-007-replaced",
+      "index": 7,
+      "action": "hold",
+      "version": "v0",
+      "n": 1845,
+      "units": 9,
+      "chosen": {
+        "n": 1845,
+        "rmse": 46.57345946248082,
+        "mae": 37.095707877709934,
+        "bias": 9.878420076668123,
+        "over_rate": 0.6298102981029811,
+        "nasa_exponent_mean": 3.395525159297434,
+        "nasa_score": 1970576.711190682
+      },
+      "static": {
+        "n": 1845,
+        "rmse": 46.57345946248082,
+        "mae": 37.095707877709934,
+        "bias": 9.878420076668123,
+        "over_rate": 0.6298102981029811,
+        "nasa_exponent_mean": 3.395525159297434,
+        "nasa_score": 1970576.711190682
+      },
+      "rel_gain": 0.0,
+      "versus_static": "same_model"
+    }
+  ]
+}

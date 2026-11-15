@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b005-t3-lr-down",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 19984,
+  "train_matrix_sha256": "sha256:d4fbe21dd178385ca87b2afff66ffdfa4545f4ae39c751f762111b041158260a",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:654cb970ad6fbea41ca2e8b86d0123127410fb3bd6bb1157652b8d4d846e895c",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 7341,
+  "final_epochs": 24,
+  "epochs_run": 14,
+  "best_epoch": 9,
+  "training_seconds": 0.2778170410019811,
+  "learning_rate": 0.0004,
+  "batch_size": 256,
+  "select_before": {
+    "n": 3385,
+    "rmse": 58.82841963717431,
+    "mae": 43.07672052497015,
+    "bias": -11.16248221342803,
+    "over_rate": 0.4741506646971935,
+    "nasa_exponent_mean": 3.6818350978231895,
+    "nasa_score": 1099011622.8147407
+  },
+  "select_after": {
+    "n": 3385,
+    "rmse": 57.629137224487636,
+    "mae": 42.712985375548335,
+    "bias": -6.699985617445127,
+    "over_rate": 0.5122599704579025,
+    "nasa_exponent_mean": 3.701148872251063,
+    "nasa_score": 633323894.4689655
+  },
+  "retention_before": {
+    "n": 10587,
+    "rmse": 46.7044786783142,
+    "mae": 36.878449454829145,
+    "bias": 14.848312490289405,
+    "over_rate": 0.6701615188438651,
+    "nasa_exponent_mean": 3.433651057430533,
+    "nasa_score": 203632067.9945033
+  },
+  "retention_after": {
+    "n": 10587,
+    "rmse": 45.45115297995013,
+    "mae": 35.45169356818132,
+    "bias": 11.0128382437471,
+    "over_rate": 0.6354019080003778,
+    "nasa_exponent_mean": 3.2631825646131225,
+    "nasa_score": 115368273.87804739
+  },
+  "spec": {
+    "trial_id": "t3-lr-down",
+    "arm": "lr-down",
+    "hypothesis": "现有步长可能在新旧分布之间来回震荡；学习率缩小到 0.0004 应使选型集误差低于基准试验。",
+    "changed_factor": "learning_rate",
+    "data_scope": "replay",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.0004,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:29+00:00"
+}

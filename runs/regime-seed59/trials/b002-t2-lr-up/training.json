@@ -1,0 +1,82 @@
+{
+  "format": "harness.trial-report.v1",
+  "profile": "C",
+  "task": "regression",
+  "device": "cpu",
+  "numpy_version": "1.26.4",
+  "python_version": "3.10.12",
+  "machine": "aarch64",
+  "stage_id": "b002-t2-lr-up",
+  "seed": 42,
+  "parameter_count": 833,
+  "input_features": 24,
+  "train_rows": 8905,
+  "train_matrix_sha256": "sha256:d8d4b9fc7a46c56a3725886890cb7c9eb4dafb372e107fe1d08aa49bdcb3cad3",
+  "parent_version": "v0",
+  "parent_checkpoint_sha256": "sha256:98ec6e30e38aee56ca15b7d624a8f412226d46fe97b170667a567601c700bc4e",
+  "checkpoint_sha256": "sha256:af9c16f4b748b7cc91259e4c6de793e97db7bd69a9b926bcb599f541c667ac5c",
+  "initial_steps": 6630,
+  "initial_epochs": 15,
+  "final_steps": 6665,
+  "final_epochs": 16,
+  "epochs_run": 6,
+  "best_epoch": 1,
+  "training_seconds": 0.05236416700063273,
+  "learning_rate": 0.0025,
+  "batch_size": 256,
+  "select_before": {
+    "n": 1858,
+    "rmse": 73.5812487175011,
+    "mae": 54.69698158139055,
+    "bias": -6.198916753563799,
+    "over_rate": 0.5877287405812702,
+    "nasa_exponent_mean": 4.76705317735112,
+    "nasa_score": 7014359608.681602
+  },
+  "select_after": {
+    "n": 1858,
+    "rmse": 73.63768355271233,
+    "mae": 55.280669102204115,
+    "bias": -5.133721132253556,
+    "over_rate": 0.5936490850376749,
+    "nasa_exponent_mean": 4.830977792130515,
+    "nasa_score": 4299194943.988948
+  },
+  "retention_before": {
+    "n": 3210,
+    "rmse": 42.83453261937968,
+    "mae": 34.585928881674825,
+    "bias": 12.236425860713702,
+    "over_rate": 0.6632398753894081,
+    "nasa_exponent_mean": 3.200714007156393,
+    "nasa_score": 1577040.5672952253
+  },
+  "retention_after": {
+    "n": 3210,
+    "rmse": 44.83822801672899,
+    "mae": 36.91738057511661,
+    "bias": 17.659251474635102,
+    "over_rate": 0.7093457943925233,
+    "nasa_exponent_mean": 3.4695288755830287,
+    "nasa_score": 1860274.3576049889
+  },
+  "spec": {
+    "trial_id": "t2-lr-up",
+    "arm": "lr-up",
+    "hypothesis": "漂移程度 severe，现有步长在限定轮数内可能收敛不足；学习率放大到 0.0025 应使选型集误差低于基准试验。",
+    "changed_factor": "learning_rate",
+    "data_scope": "replay",
+    "replay_ratio": 0.5,
+    "learning_rate": 0.0025,
+    "batch_size": 256,
+    "epochs": 20,
+    "source": "rule"
+  },
+  "source_sha256": {
+    "model.py": "sha256:325026d80747eb36f39c8df1be02b640ae21b3cd082827c66aacbdf273dd61c5",
+    "data.py": "sha256:6099e312829ac3aaf48209ec1f618532c4a8552fedf73f09cf31c8876261db65",
+    "train.py": "sha256:77043a0a944efff434a690fbe4749e9fe5601c38f98e58df116a2ef6ba13ba0a",
+    "predict.py": "sha256:80e6787cd862dfefd85cd6bfcd73b5577dd90e202dd3d5bb9f18a52761807452"
+  },
+  "created_at": "2026-11-15T12:51:23+00:00"
+}
