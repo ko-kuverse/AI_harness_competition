@@ -7,6 +7,10 @@ on:
         description: "Image tag to build and save"
         required: false
         default: "cpu-c-harness:0.1.0"
+      ref:
+        description: "Git ref to build"
+        required: false
+        default: "feat/minimal-harness"
 
 permissions:
   contents: read
@@ -16,6 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Show build revision
+        run: git rev-parse HEAD && git log -1 --oneline
 
       - name: Build linux/amd64 image
         run: |
